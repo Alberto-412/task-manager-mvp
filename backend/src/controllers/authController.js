@@ -3,12 +3,17 @@ const jwt = require('jsonwebtoken');
 const pool = require('../config/db');
 
 const SALT_ROUNDS = 10;
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 async function register(req, res) {
   const { email, password } = req.body;
 
   if (!email || !password) {
     return res.status(400).json({ error: 'Email y contraseña son obligatorios' });
+  }
+
+  if (!EMAIL_REGEX.test(email)) {
+    return res.status(400).json({ error: 'Formato de email inválido' });
   }
 
   try {
