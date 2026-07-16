@@ -4,6 +4,7 @@ const pool = require('../config/db');
 
 const SALT_ROUNDS = 10;
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MIN_PASSWORD_LENGTH = 8;
 
 async function register(req, res) {
   const { email, password } = req.body;
@@ -14,6 +15,10 @@ async function register(req, res) {
 
   if (!EMAIL_REGEX.test(email)) {
     return res.status(400).json({ error: 'Formato de email inválido' });
+  }
+
+  if (password.length < MIN_PASSWORD_LENGTH) {
+    return res.status(400).json({ error: `La contraseña debe tener al menos ${MIN_PASSWORD_LENGTH} caracteres` });
   }
 
   try {

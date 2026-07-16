@@ -1,31 +1,33 @@
 <div class="auth-page">
-  <h1>Crear cuenta</h1>
+  <div class="card">
+    <h1>Crear cuenta</h1>
 
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <label>
-      Email
-      <input type="email" formControlName="email" />
-    </label>
-    @if (form.controls.email.invalid && form.controls.email.touched) {
-      <p class="field-error">Introduce un email válido</p>
-    }
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <label>
+        Email
+        <input type="email" formControlName="email" />
+      </label>
+      @if (form.controls.email.invalid && form.controls.email.touched) {
+        <p class="field-error">Introduce un email válido</p>
+      }
 
-    <label>
-      Contraseña
-      <input type="password" formControlName="password" />
-    </label>
-    @if (form.controls.password.invalid && form.controls.password.touched) {
-      <p class="field-error">Mínimo 8 caracteres</p>
-    }
+      <label>
+        Contraseña
+        <input type="password" formControlName="password" />
+      </label>
+      @if (form.controls.password.invalid && form.controls.password.touched) {
+        <p class="field-error">Mínimo 8 caracteres</p>
+      }
 
-    @if (errorMessage()) {
-      <p class="form-error">{{ errorMessage() }}</p>
-    }
+      @if (errorMessage()) {
+        <p class="form-error">{{ errorMessage() }}</p>
+      }
 
-    <button type="submit" [disabled]="loading()">
-      {{ loading() ? 'Creando cuenta...' : 'Crear cuenta' }}
-    </button>
-  </form>
+      <button type="submit" class="btn" [disabled]="loading()">
+        {{ loading() ? 'Creando cuenta...' : 'Crear cuenta' }}
+      </button>
+    </form>
 
-  <p>¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión</a></p>
+    <p class="auth-switch">¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión</a></p>
+  </div>
 </div>
