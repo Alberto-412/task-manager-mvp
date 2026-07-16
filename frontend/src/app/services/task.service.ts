@@ -1,6 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export type TaskStatus = 'pending' | 'in_progress' | 'done';
 export type TaskPriority = 'low' | 'medium' | 'high';
@@ -27,7 +28,7 @@ export interface TaskInput {
 @Injectable({ providedIn: 'root' })
 export class TaskService {
   private http = inject(HttpClient);
-  private readonly apiUrl = '/api/tasks';
+  private readonly apiUrl = `${environment.apiUrl}/tasks`;
 
   getTasks(status?: TaskStatus | 'all'): Observable<Task[]> {
     const params = status && status !== 'all' ? new HttpParams().set('status', status) : undefined;
