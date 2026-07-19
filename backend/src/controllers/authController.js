@@ -39,6 +39,9 @@ async function register(req, res) {
 
     res.status(201).json({ token, user: { id: result.insertId, email } });
   } catch (err) {
+    if (err.code === 'ER_DUP_ENTRY') {
+      return res.status(409).json({ error: 'Ese email ya está registrado' });
+    }
     console.error(err);
     res.status(500).json({ error: 'Error al registrar el usuario' });
   }
