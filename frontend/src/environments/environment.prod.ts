@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://task-manager-mvp-production.up.railway.app/api',
+  apiUrl: 'https://task-manager-mvp-cnd2.onrender.com/api',
 };
