@@ -3,6 +3,7 @@
 Aplicación de gestión de tareas full-stack. Proyecto de aprendizaje construido tras un bootcamp fullstack, con el objetivo de practicar el ciclo completo: frontend, backend, base de datos, autenticación y despliegue.
 
 🔗 **Demo en vivo:** https://task-manager-mvp-three.vercel.app
+
 💻 **Repositorio:** https://github.com/Alberto-412/task-manager-mvp
 
 ## Stack
