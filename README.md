@@ -2,12 +2,16 @@
 
 Aplicación de gestión de tareas full-stack. Proyecto de aprendizaje construido tras un bootcamp fullstack, con el objetivo de practicar el ciclo completo: frontend, backend, base de datos, autenticación y despliegue.
 
+🔗 **Demo en vivo:** https://task-manager-mvp-three.vercel.app
+
 ## Stack
 
-- **Frontend:** Angular 19 (standalone components)
-- **Backend:** Node.js + Express
-- **Base de datos:** MySQL
+- **Frontend:** Angular 19 (standalone components) — desplegado en [Vercel](https://vercel.com)
+- **Backend:** Node.js + Express — desplegado en [Render](https://render.com)
+- **Base de datos:** MySQL — alojada en [Clever Cloud](https://www.clever-cloud.com)
 - **Autenticación:** JWT
+
+> Nota: el backend está en el plan gratuito de Render, que "duerme" tras 15 minutos de inactividad — la primera petición tras un rato sin uso puede tardar unos segundos en responder mientras arranca de nuevo.
 
 ## Funcionalidades
 
@@ -55,4 +59,4 @@ La app queda disponible en `http://localhost:4200`. Las peticiones a `/api/*` se
 
 ## Estado del proyecto
 
-🚧 En desarrollo — MVP en construcción.
+✅ MVP desplegado y funcional.
