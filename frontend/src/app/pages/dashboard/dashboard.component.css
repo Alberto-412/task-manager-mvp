@@ -127,6 +127,14 @@ header {
 
   .task-form {
     flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-field,
+  .task-form input[type='text'],
+  .task-form select,
+  .task-form input[type='date'] {
+    width: 100%;
   }
 
   .task-item {
