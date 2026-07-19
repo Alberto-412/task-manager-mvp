@@ -62,3 +62,7 @@ La app queda disponible en `http://localhost:4200`. Las peticiones a `/api/*` se
 ## Estado del proyecto
 
 ✅ MVP desplegado y funcional.
+
+## Licencia
+
+MIT
