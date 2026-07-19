@@ -50,6 +50,10 @@ async function createTask(req, res) {
     return res.status(400).json({ error: 'El título es obligatorio' });
   }
 
+  if (priority && !VALID_PRIORITIES.includes(priority)) {
+    return res.status(400).json({ error: 'Prioridad inválida' });
+  }
+
   try {
     const [result] = await pool.query(
       `INSERT INTO tasks (user_id, title, description, priority, due_date, status)
@@ -67,6 +71,10 @@ async function createTask(req, res) {
 
 async function updateTask(req, res) {
   const { title, description, priority, due_date } = req.body;
+
+  if (priority && !VALID_PRIORITIES.includes(priority)) {
+    return res.status(400).json({ error: 'Prioridad inválida' });
+  }
 
   try {
     const [existing] = await pool.query('SELECT id FROM tasks WHERE id = ? AND user_id = ?', [
