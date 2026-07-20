@@ -1,7 +1,6 @@
 import { Component, OnInit, computed, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
-import { DatePipe } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import { Task, TaskInput, TaskPriority, TaskService, TaskStatus } from '../../services/task.service';
 
@@ -9,7 +8,7 @@ type StatusFilter = TaskStatus | 'all';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [ReactiveFormsModule, DatePipe],
+  imports: [ReactiveFormsModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
@@ -113,6 +112,11 @@ export class DashboardComponent implements OnInit {
   onLogout(): void {
     this.authService.logout();
     this.router.navigate(['/login']);
+  }
+
+  formatDueDate(dueDate: string): string {
+    const [year, month, day] = dueDate.substring(0, 10).split('-');
+    return `${day}/${month}/${year}`;
   }
 
   private resetForm(): void {

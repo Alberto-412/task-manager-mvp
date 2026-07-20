@@ -54,7 +54,7 @@
             <p>{{ task.description }}</p>
           }
           @if (task.due_date) {
-            <p class="due-date">Vence: {{ task.due_date | date: 'dd/MM/yyyy':'UTC' }}</p>
+            <p class="due-date">Vence: {{ formatDueDate(task.due_date) }}</p>
           }
         </div>
 
