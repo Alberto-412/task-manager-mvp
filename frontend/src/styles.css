@@ -48,13 +48,19 @@ input[type='password'],
 input[type='date'],
 select,
 textarea {
-  padding: 0.5rem 0.6rem;
+  height: 2.5rem;
+  padding: 0 0.6rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   font-size: 0.9rem;
   background: var(--color-surface);
   color: var(--color-text);
   font-family: inherit;
+}
+
+textarea {
+  height: auto;
+  padding: 0.5rem 0.6rem;
 }
 
 input:focus,
